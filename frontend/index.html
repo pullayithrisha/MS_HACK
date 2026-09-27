@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalesMind</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- LEFT: Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo"></div>
+                <span class="brand-name">SalesMind</span>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-field" placeholder="Search...">
+            </div>
+
+            <div class="nav-section">
+                <h3 class="nav-title">Deals</h3>
+                <ul class="nav-list" id="client-list">
+                    <li class="nav-item active" data-session="stark_industries_2">
+                        <span class="nav-icon"></span>
+                        Stark Industries
+                    </li>
+                    <li class="nav-item" data-session="wayne_enterprises_2">
+                        <span class="nav-icon"></span>
+                        Wayne Enterprises
+                    </li>
+                    <li class="nav-item" data-session="oscorp">
+                        <span class="nav-icon"></span>
+                        Oscorp
+                    </li>
+                    <li class="nav-item" data-session="cyberdyne">
+                        <span class="nav-icon"></span>
+                        Cyberdyne
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- CENTER: Main Chat Area -->
+        <main class="chat-workspace">
+            <header class="chat-header">
+                <div class="chat-header-info">
+                    <h1 id="active-client-name">Stark Industries</h1>
+                    <span class="deal-status">Active deal</span>
+                </div>
+            </header>
+
+            <div id="chat-messages" class="chat-messages">
+                <div class="message system">
+                    <div class="message-content">
+                        Hi Alex, I'm SalesMind. I can draft follow-ups, prep you for calls, and analyze objections. I'll remember everything you tell me about your deals.
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Ask SalesMind about this deal..." required autocomplete="off">
+                    <div class="input-actions">
+                        <button type="submit" class="send-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- RIGHT: Memory Inspector -->
+        <aside class="memory-panel">
+            <div class="memory-header">
+                <h2>Deal Memory</h2>
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    <span id="connection-status-text">Connecting...</span>
+                </div>
+            </div>
+
+            <div class="recalled-context-container">
+                <h3>Recalled Context</h3>
+                <div id="recalled-context-list" class="context-list">
+                    <div class="empty-state">No context recalled yet.</div>
+                </div>
+            </div>
+
+            <div class="memory-log-container">
+                <h3>Memory Activity</h3>
+                <div id="memory-log" class="memory-log">
+                    <div class="empty-state">No activity.</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
